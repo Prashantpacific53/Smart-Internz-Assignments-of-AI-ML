@@ -36,7 +36,7 @@ Dataset Link:- https://www.kaggle.com/datasets/gunavenkatdoddi/eye-diseases-%20%
 # 💡 The Problem We Are Solving
 __Current Challenge:__
 
-Right now, diagnosing DR requires **trained eye specialists** who manually examine eye scans. This process is **slow, expensive, and not scalable—especially** in rural areas where medical facilities are limited.
+Right now, diagnosing DR requires **trained eye specialists** who manually examine eye scans. This process is **slow, expensive, and not scalable especially** in rural areas where medical facilities are limited.
 
 __Our Goal:__
 
