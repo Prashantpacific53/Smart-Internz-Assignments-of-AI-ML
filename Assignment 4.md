@@ -822,3 +822,34 @@ Precaution Dose Rate per State:
 35                               West Bengal        10.266443
 ```
 
+
+# 📌 Project Structure
+📁 COVID-19-Vaccine-Analysis
+
+│── 📄 README.md
+
+│── 📄 requirements.txt
+
+│── 📄 analysis.py
+
+│── 📂 data
+
+│   ├── vaccination_data.csv
+
+│── 📂 images
+
+│   ├── bar_chart.png
+
+│   ├── pie_chart.png
+
+│   ├── heatmap.png
+
+│   ├── line_graph.png
+
+│   ├── boxplot.png
+
+# 📢 Conclusion
+This project provides a comprehensive analysis of India's COVID-19 vaccination data, highlighting trends and correlations between different vaccination metrics.
+
+# 📌 Contributions & Feedback are Welcome!
+📩 Feel free to reach out if you have any suggestions or improvements. 🚀
