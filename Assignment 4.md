@@ -489,10 +489,10 @@ plt.ylabel("States")
 plt.show()
 ```
 *Output:*
-```
+
 ![Image](https://github.com/user-attachments/assets/7588b5f2-ba42-4a84-89ee-0e3340359ac1)
 
-```
+
 
 **# 9. **Pie chart of Dose 1 and Dose 2 distribution****
 
