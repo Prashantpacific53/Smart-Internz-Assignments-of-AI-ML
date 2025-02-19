@@ -201,6 +201,8 @@ dtype: int64
 # 🔹 Step 3: 100 Questions Based on the Dataset
 Here are **100 real-world questions** we can solve using *NumPy, Pandas, Matplotlib,* and *Seaborn*.
 
+***1️⃣ Data Analysis (Pandas & NumPy)***
+
 **📌 1. Basic Data Exploration (Pandas)**
 - What are the total number of rows and columns in the dataset?
 - What are the names of all the columns in the dataset?
@@ -284,6 +286,9 @@ Here are **100 real-world questions** we can solve using *NumPy, Pandas, Matplot
 - How does India's vaccination progress compare to global trends?
 - What are the key factors influencing vaccination rates?
 - Can we find anomalies or errors in the dataset?
+
+
+***2️⃣ Data Visualization (Matplotlib & Seaborn)***
 
 **📌 8. Comparing Categories**
 - Which states have the highest number of healthcare workers vaccinated?
@@ -566,4 +571,254 @@ plt.show()
 
 ![image](https://github.com/user-attachments/assets/a7e5a61b-8d47-4d7b-8ed0-62bdd2dd8219)
 
+***3️⃣ Statistical Analysis (NumPy & Pandas)***
+
+**# 13. Mean, Median, Standard Deviation of Total Vaccinations**
+
+*Input:*
+```
+print("\nMean Vaccinations:", df["Total Vaccination Doses"].mean())
+print("Median Vaccinations:", df["Total Vaccination Doses"].median())
+print("Standard Deviation:", df["Total Vaccination Doses"].std())
+```
+*Output:*
+```
+Mean Vaccinations: 61152044.11111111
+Median Vaccinations: 40642649.5
+Standard Deviation: 79455650.5531635
+```
+
+**# 14. Identify outliers using IQR method**
+
+*Input:*
+```
+Q1 = df["Total Vaccination Doses"].quantile(0.25)
+Q3 = df["Total Vaccination Doses"].quantile(0.75)
+IQR = Q3 - Q1
+outliers = df[(df["Total Vaccination Doses"] < (Q1 - 1.5 * IQR)) | 
+              (df["Total Vaccination Doses"] > (Q3 + 1.5 * IQR))]
+print("\nOutlier States Based on Vaccinations:\n", outliers)
+```
+*Output:*
+```
+Outlier States Based on Vaccinations:
+         State/UTs  Total Vaccination Doses      Dose1     Dose 2  \
+33  Uttar Pradesh                392011174  154096960  147866674   
+
+    Dose 1 15-18  Dose 2 15-18  Dose 1 12-14  Dose 2 12-14  Precaution 18-59  \
+33      14193665      13227415       8709857       7876085          36643273   
+
+    Population  Vaccination Rate  
+33   231502578          66.56382
+```
+
+**# 15. State with max difference between Dose 1 and Dose 2**
+
+*Input:*
+```
+df["Dose Difference"] = abs(df["Dose1"] - df["Dose 2"])
+max_diff_state = df.loc[df["Dose Difference"].idxmax()]
+print("\nState with Max Difference Between Dose 1 & Dose 2:\n", max_diff_state)
+```
+*Output:*
+```
+State with Max Difference Between Dose 1 & Dose 2:
+ State/UTs                  Maharashtra
+Total Vaccination Doses      177977996
+Dose1                         84665105
+Dose 2                        71650189
+Dose 1 15-18                   4119145
+Dose 2 15-18                   3108854
+Dose 1 12-14                   2891273
+Dose 2 12-14                   1870754
+Precaution 18-59               5188711
+Population                   124904071
+Vaccination Rate             67.784104
+Dose Difference               13014916
+15-18 Vaccination Rate        3.297847
+12-14 Vaccination Rate        2.314795
+Name: 20, dtype: object
+```
+
+
+**# 16. 75th percentile of total vaccinations**
+
+*Input:*
+```
+print("\n75th Percentile of Total Vaccinations:", df["Total Vaccination Doses"].quantile(0.75))
+```
+*Output:*
+```
+75th Percentile of Total Vaccinations: 112148450.25
+```
+
+**# 17. Compare vaccination rate of 15-18 & 12-14 age groups**
+
+*Input:*
+```
+df["15-18 Vaccination Rate"] = (df["Dose 1 15-18"] / df["Population"]) * 100
+df["12-14 Vaccination Rate"] = (df["Dose 1 12-14"] / df["Population"]) * 100
+print("\nVaccination Rate of 15-18 vs 12-14 Age Groups:\n", df[["State/UTs", "15-18 Vaccination Rate", "12-14 Vaccination Rate"]])
+```
+*Output:*
+```
+Vaccination Rate of 15-18 vs 12-14 Age Groups:
+                                    State/UTs  15-18 Vaccination Rate  \
+0                        Andaman And Nicobar                4.814023   
+1                             Andhra Pradesh                2.764750   
+2                          Arunachal Pradesh                3.452210   
+3                                      Assam                3.507122   
+4                                      Bihar                4.856523   
+5                                 Chandigarh                4.983248   
+6                               Chhattisgarh                3.835406   
+7   Dadra And Nagar Haveli And Daman And Diu                4.070946   
+8                                      Delhi                5.227563   
+9                                        Goa                3.399098   
+10                                   Gujarat                4.448720   
+11                                   Haryana                4.008658   
+12                          Himachal Pradesh                4.422572   
+13                         Jammu And Kashmir                5.840561   
+14                                 Jharkhand                3.980292   
+15                                 Karnataka                4.046629   
+16                                    Kerala                3.812368   
+17                                    Ladakh                3.467221   
+18                               Lakshadweep                4.410539   
+19                            Madhya Pradesh                4.934716   
+20                               Maharashtra                3.297847   
+21                                   Manipur                3.190389   
+22                                 Meghalaya                2.045305   
+23                                   Mizoram                4.591254   
+24                                  Nagaland                2.892999   
+25                                    Odisha                4.661565   
+26                                Puducherry                3.079736   
+27                                    Punjab                3.663844   
+28                                 Rajasthan                4.498030   
+29                                    Sikkim                4.566585   
+30                                Tamil Nadu                3.139571   
+31                                 Telangana                4.518387   
+32                                   Tripura                3.460799   
+33                             Uttar Pradesh                6.131105   
+34                               Uttarakhand                4.555363   
+35                               West Bengal                3.567996   
+
+    12-14 Vaccination Rate  
+0                 3.790467  
+1                 1.661215  
+2                 2.386289  
+3                 2.776630  
+4                 3.337446  
+5                 3.299541  
+6                 3.341864  
+7                 2.582568  
+8                 3.542654  
+9                 2.185623  
+10                2.757983  
+11                1.937488  
+12                3.626065  
+13                3.692448  
+14                2.649925  
+15                3.341213  
+16                2.337122  
+17                2.969789  
+18                3.012076  
+19                2.836345  
+20                2.314795  
+21                2.194331  
+22                0.991463  
+23                3.694516  
+24                1.254755  
+25                3.399208  
+26                1.875581  
+27                2.243033  
+28                2.948306  
+29                3.328019  
+30                2.290564  
+31                2.903307  
+32                2.699310  
+33                3.762315  
+34                3.438552  
+35                2.599200
+```
+
+***4️⃣ Advanced Insights***
+
+**# 18. Vaccination trend in top 5 populated states**
+
+*Input:*
+```
+top_5_pop = df.nlargest(5, "Population")
+plt.figure(figsize=(12,6))
+sns.barplot(x="Population", y="State/UTs", data=top_5_pop, palette="viridis")
+plt.title("Top 5 Populated States and Vaccination Count")
+plt.xlabel("Population")
+plt.ylabel("States")
+plt.show()
+```
+*Output:*
+![image](https://github.com/user-attachments/assets/152aa685-b130-4b78-993a-f32cb410268b)
+
+
+**# 19. Variation in precaution doses across states**
+
+*Input:*
+```
+plt.figure(figsize=(12,6))
+sns.barplot(x="Precaution 18-59", y="State/UTs", data=df.sort_values("Precaution 18-59", ascending=False), palette="magma")
+plt.title("Precaution Dose Distribution Across States")
+plt.xlabel("Precaution Doses")
+plt.ylabel("States")
+plt.show()
+```
+*Output:*
+![image](https://github.com/user-attachments/assets/803a7567-1886-4392-a2da-e4cfcdf1ed3c)
+
+
+**# 20. Percentage of 18-59 age group receiving precaution doses**
+
+*Input:*
+```
+df["Precaution Rate"] = (df["Precaution 18-59"] / df["Population"]) * 100
+print("\nPrecaution Dose Rate per State:\n", df[["State/UTs", "Precaution Rate"]])
+```
+*Output:*
+```
+Precaution Dose Rate per State:
+                                    State/UTs  Precaution Rate
+0                        Andaman And Nicobar        59.382307
+1                             Andhra Pradesh        13.145629
+2                          Arunachal Pradesh         4.742612
+3                                      Assam         5.856256
+4                                      Bihar         9.356111
+5                                 Chandigarh         4.406929
+6                               Chhattisgarh        17.858614
+7   Dadra And Nagar Haveli And Daman And Diu        17.847227
+8                                      Delhi        12.109882
+9                                        Goa         4.071309
+10                                   Gujarat        19.464176
+11                                   Haryana         4.521501
+12                          Himachal Pradesh        20.258550
+13                         Jammu And Kashmir         6.434925
+14                                 Jharkhand         3.420599
+15                                 Karnataka         9.652365
+16                                    Kerala         2.504678
+17                                    Ladakh        24.199978
+18                               Lakshadweep        24.226906
+19                            Madhya Pradesh        11.914682
+20                               Maharashtra         4.154157
+21                                   Manipur         3.347708
+22                                 Meghalaya         0.885209
+23                                   Mizoram         6.179529
+24                                  Nagaland         1.296480
+25                                    Odisha        21.380002
+26                                Puducherry        18.480605
+27                                    Punjab         2.755337
+28                                 Rajasthan         5.826025
+29                                    Sikkim        24.057208
+30                                Tamil Nadu         7.247720
+31                                 Telangana        28.461791
+32                                   Tripura         6.524819
+33                             Uttar Pradesh        15.828451
+34                               Uttarakhand        12.112564
+35                               West Bengal        10.266443
+```
 
