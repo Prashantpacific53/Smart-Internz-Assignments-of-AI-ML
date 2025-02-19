@@ -505,10 +505,10 @@ plt.title("Dose 1 vs Dose 2 Distribution in India")
 plt.show()
 ```
 *Output:*
-```
+
 ![image](https://github.com/user-attachments/assets/f1078b1e-8f60-42a9-8ad8-d4d5a75e1186)
 
-```
+
 
 **# 10. **Heatmap of correlation matrix (Fixed)****
 
@@ -524,10 +524,10 @@ plt.title("Correlation Matrix")
 plt.show()
 ```
 *Output:*
-```
+
 ![image](https://github.com/user-attachments/assets/90a56511-b25e-486e-bba9-aae82e591fe1)
 
-```
+
 
 **# 11. **Fixed Line Graph (Without "Date" Column)****
 
@@ -548,10 +548,10 @@ plt.title("Vaccination Trends in Top 5 States (Based on Total Doses)")
 plt.show()
 ```
 *Output:*
-```
+
 ![image](https://github.com/user-attachments/assets/57f4d252-ae46-4c4c-89c9-ff49931e194f)
 
-```
+
 
 **# 12. **Boxplot for vaccine distribution****
 
@@ -563,7 +563,7 @@ plt.title("Distribution of Vaccination Doses Across States")
 plt.show()
 ```
 *Output:*
-```
+
 ![image](https://github.com/user-attachments/assets/a7e5a61b-8d47-4d7b-8ed0-62bdd2dd8219)
 
-```
+
