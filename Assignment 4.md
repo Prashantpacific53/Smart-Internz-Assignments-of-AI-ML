@@ -490,7 +490,7 @@ plt.show()
 ```
 *Output:*
 ```
-![image](https://github.com/user-attachments/assets/45dc7f73-14f1-4dce-aaac-c2ef8209e7cf)
+![Image](https://github.com/user-attachments/assets/7588b5f2-ba42-4a84-89ee-0e3340359ac1)
 
 ```
 
