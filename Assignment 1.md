@@ -1,6 +1,14 @@
+# Assignment No - 1
+
+Take a usecase in any domain and explain below points properly
+- Data : Data Sources, Data Issues, Types of Data
+- Problem Statement
+
 AI-ML Assignment 1: Use Case Analysis
+
 Use Case:
 # AI-Powered Detection of Diabetic Retinopathy
+**Author:** Prashant Kumar
 
 # 🌍 Why This Matters?
 Imagine a world where no one loses their eyesight due to diabetes. **Diabetic Retinopathy (DR)** is a serious eye condition that can lead to blindness if not detected early. The problem? Many people don’t realize they have it until it’s too late, and regular eye screenings are expensive and time-consuming.
