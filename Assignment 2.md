@@ -1,4 +1,9 @@
+# Assignment No - 2
+
+Use Methods of Python Datatypes (Objects) int, float, complex, list, tuple, str, set, dict, bool
+
 # AI-ML Assignment 2: **Exploring Python Data Types & Methods**
+**Author:** Prashant Kumar
 
 # 🚀 Why Data Types Matter?
 Imagine you are building an AI system that predicts health risks based on medical records. The data could include:
