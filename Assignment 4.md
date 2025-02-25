@@ -14,6 +14,8 @@ Give me 100 real world questions based on my data which I can solve using Numpy,
 ## 📖 Project Overview
 This project analyzes COVID-19 vaccination trends across different **States/UTs in India** using Python and data visualization techniques. The dataset provides insights into the number of vaccine doses administered, distribution across different population groups, and overall vaccination trends.
 
+**Author:** Prashant Kumar 
+
 ## 📂 Dataset Information
 The dataset contains **vaccination details of Indian states and union territories**, with columns such as:
 
